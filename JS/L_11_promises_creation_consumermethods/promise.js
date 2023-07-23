@@ -5,9 +5,9 @@
  * */
 
 let fs = require("fs");
-// // fs.promises.readFile("f1.txt");
+// // // fs.promises.readFile("f1.txt");
 
- let promise = fs.promises.readFile("f11.txt");
+//  let promise = fs.promises.readFile("f11.txt");
 
 //  /***then is an event listner (handler) for a promise when promise state changes to resolved***/
 
@@ -42,12 +42,150 @@ let fs = require("fs");
  * 
  * **/
 
-promise.then(scb,fcb); // scb is success call back and fcb failure callback
+//If ques is related implement promise.catch using then
+// promise.then(scb,fcb); // scb is success call back and fcb failure callback
 
-function scb(data) {
-    console.log("Hi the data is 15 " + data);
-}
+// promise.catch -> promise.then(null, fcb);
 
-function fcb(error) {
-    console.log("inside catch", error.message);
-}
+// function scb(data) {
+//     console.log("Hi the data is 15 " + data);
+// }
+
+// function fcb(error) {
+//     console.log("inside catch", error.message);
+// }
+
+// promise.then(scb); //handles only success
+// // promise.then(scb, fcb); //handles success and failure
+// promise.then(null, fcb);  // only handles errors
+// // promise.catch(fcb); //handles only failure
+// promise.finally(finallCB); //finally will execute in any of the case resolved or refect
+
+// function finallCB() {
+//     console.log(" I will be called finally");
+// }
+
+/**
+ * promise.catch -> promise.then(null, fcb);
+ * try catch finally
+ * 
+ * then catch finally
+ *
+ * then , catch and finally -> event listener -> promise  all of them will execute
+ * resolve  , reject, finally on both the cases
+ * no matter how many then, catch and finally are attached to a particular promise 
+ * if resolved all then will be executed , if rejected all catch will be executed
+ * 
+ * */
+
+// Q1. 
+// On reject -> promise.then(null, fcb), promise.catch(f1cb), promise.finally(finallycb)
+//out of these three all will execute
+
+
+
+/***
+ * Promise
+ * 1. resolve  -> promise with state resolved whatever you pass into it you that value
+ * 2. reject  -> promise with state rejected whatever you pass into it as the value
+ * 
+ * **/
+
+//**********************************************/
+// const promise = Promise.resolve("resolved value");
+// promise.then(function (value) {
+//     console.log("value", value);
+// })
+
+// const promise = Promise.resolve("resolved value");
+// promise.then(function (value) {
+//     console.log("value", value);
+// }).catch(function (err) {
+//     console.log("90");
+//     console.log("error", err);
+// })
+
+const promise1 = Promise.reject("Some error");
+promise1.catch(function(err){
+    console.log("error",err);
+})
+// promise1.catch(function (err) {
+//     console.log("90",err);  // 90 Some error
+// }).then(function(err){
+//     console.log("92",err);   //92 undefined
+// })
+
+
+// promise1.then(null, function (err) {
+//     console.log("90", err);  //90 Some error
+//     // usually returns value/Promise.resolve/undefined || Promise(pending)
+//     // return 100;
+//     return fs.promises.readFile("f1.txt");
+//     return Promise.resolve(10);   
+// }).then(function (err) {
+//     console.log("92 "+err);   // 92 100
+// })
+
+// //  when you have a second then that is chained to the first then -> value promise
+// //  recived by the second then is return value of the scb / fcb of the first then
+
+
+/*************************Q2*********************/
+// let promise = Promise.resolve(10);
+
+// promise.then(function (data) {
+//     console.log("92", data);
+// }).then(function (firstThenVal) {
+//     console.log("113", firstThenVal);
+//     return 100
+// }).then(function (secondThenVal) {
+//     console.log("116", secondThenVal);
+//     return fs.promises.readFile("f1.txt")
+// }).then(function (thirdThen) {
+//     console.log("120"+thirdThen);
+// })
+
+/*************************Q3*********************/
+
+//The node works like when we reject a promise and not attaching any of the catch we can get a strange error
+let promise = Promise.resolve(10);
+promise
+    .then(function (data) {
+        console.log("92", data);
+        return "hello";
+    }).catch(function (firstThenVal) {
+        console.log("113", firstThenVal);
+        return 100;
+    }).then(function (secondThenVal) {
+        console.log("116", secondThenVal);
+        return fs.promises.readFile("f1.txt");
+    }).then(function (thirdThen) {
+        console.log("120", thirdThen);
+    }).catch(function (firstThenVal) {
+        console.log("113", firstThenVal);
+        return 100
+    })
+
+
+/***
+ * catch -> if it is reciving a rejected value/ error -> it will take it 
+ * then -> then will completely ignored 
+ * and vice versa 
+ * 
+ * do not leave a rejected promise openly because that completley halt your code 
+ * */
+
+/**
+ * 1. Eventlistener -> then ,catch , finally
+ * 2. Then -> resolved, catch -> reject, finally -> both individually
+ * 2.2 -> catch will always accept -> rejection/error and  then -> always accept values/ promises
+ * 3. Chaining then/catch -> rejection|Error -> catch/ everything else(even if catch returns a value it calls next then) -> next then will be called 
+ * 4. no catch code stops exceuting 
+ * ***/ 
+
+/**
+ * 1.finally -> do not take anything 
+ * 2.for values and promises -> it does not returns anything / and neither take anything
+ * 3.Rejection -> goes to catch -> and give it the error/ rejection
+ * 
+ * **/ 
