@@ -1,0 +1,14 @@
+Asynchronous programming is a backbone for JS based stack
+There are 3 ways to use async function in JS
+1.Call backs
+2.Promises (these are improvement over callbacks)
+3.Async await (is just syntax sugar over promises)
+
+
+// Promises are most difficult concept when it comes to JS
+//Promises is a part of Java script , its just like a Data structure
+//The actual outcome of a promise will be determined by the function that will give you the promise
+
+//Initially value will be undefined and state will also be as pending in promises
+
+//After the task is done  value will be filled and state is set as fulfilled fulfilled

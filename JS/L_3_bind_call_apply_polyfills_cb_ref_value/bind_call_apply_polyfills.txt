@@ -1,0 +1,15 @@
+These are most imp concepts which will be directly asked in the interview
+
+Spread is similar to spreading the cards
+
+Polyfill is just a implementation of a feature
+use case of bind,call and apply - explicitlly setting the value of this
+                                - borrow features from functions
+
+ // Bind is used usually in react - when we add event listeners(button click) in different components 
+ those functions are binded through the class
+ to bind eventlistener to an element    
+
+ //Building our own call ,apply and bind is known as building  polyfills
+
+ //Call , Bind and Apply all these functions are available on functions because we need to attach functions to an object                           

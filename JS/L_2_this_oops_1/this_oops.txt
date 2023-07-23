@@ -1,0 +1,45 @@
+The object that we get from environment is known as native object.
+In the case of browser we get window as a host object other one is document
+window and document both are host objects which are part of local storage
+
+// Enviornment ->
+//  host object ->browser//  window,document,localstorage
+// host object -> nodejs -> global, os ,process
+
+// JS objects ->which are given by language 
+// native object -> Date, JSON,Object
+//First the memory allocation takes place for the variables and then the code execution happens
+
+Initially we have cap and sayHi both undefined 
+
+Whenever a function got invoked from object , object becomes the this - when we call a method with a function that determines the this which is used for a particular function is from that method
+
+Execution context will get replaced with new execution context for call sayHiAdd
+
+For normal function call this will be always be your window object
+
+For method call it would be current object from the method
+
+// rules for this
+// GEC -> this -> window object
+// EC is created with -> method call -> this will be that object
+// EC is created with -> function call -> this will be that window
+
+
+// We have to inherit a class and with that we have to create an instance
+
+// In Java we have a class and with it we have to create a blue print and we inherit a class and create an object by adding some properties to it
+
+//The OOPS which is followed in java script is self based oops or prototypal OOPS.
+
+//In Java or C++ we create a class and from that we create an object and if we want to create another object then create a another class that inherit from parent object
+
+//In JS we create an object and we can inherit child objects from this base object by adding some properties
+
+// JS follows prototypal OOPS
+
+// Array contains all the methods required by every  array
+
+// advantage  of  inheritance -> 
+//1. reuse of the code
+// 2. saving memory space 

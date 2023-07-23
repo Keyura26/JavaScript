@@ -1,0 +1,49 @@
+In dynamically typed language, we donot tell interpreter before hand which type of value its going to store.
+
+ Javascript  -> dynamically typed ,
+ high level language  v8Engine -> C++, 
+ a connection with java
+
+ Datatypes in JS
+ Primitive types -> number, string , null , undefined , boolean
+ New Types -> BigInt,Symbol
+
+ Non-primitve types  ->  object, functions and arrays
+ New Types -> map ,set, weakmap and weakset
+ Java script language is an abstraction over c++ in general
+
+000: object. The data is reference to an object
+null is stored as 000 so the data type of null iis object
+
+null is primitive for non primitive we compare the reference and for primitive we compare the value.
+
+Java script works even if we don't add semi colon
+
+linter has some recomendations -> eslint which specifies that there could be some errors because of some declarations
+
+object ->  collection of key:value pairs
+
+Code which is not inside any function is in global area
+
+Every code in JS is executed inside execution context Global EC
+
+Whenever a function is invoked a EC is needed for it
+
+Call stack will have current function which is being called and execution of which is being taken place
+
+ Code Excution : always executes in EC
+    // GLobal code -> GEC
+    // insidee fn -> own EC
+
+For code Execution first step is -> EC Creation
+-> Hoisting - Memory Allocation for all variables which are declared but not defined if any variable goes undefined then variable is shown as undefined
+     -> Variable - undefined
+     -> Function - get its memory allocated
+     -> Then code execution takes place
+     Memory allocation part before execution is called Hoisting.
+
+     Java Script is an interpreted language .Its going to execute untill its not taking any error . Let always have an block scope
+
+     TD - Temporal Dead Zone 
+
+     Let and Const are script scope

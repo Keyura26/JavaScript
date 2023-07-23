@@ -1,0 +1,32 @@
+Asynchronous conept is an essential concept in JS
+
+//As setTimeOut is not a part of JS so it will go to Web API region
+
+//When browser sees that setTimeout is called it will move it from there and send it to Web API area
+
+//If we have any other task that is coming from Web API it can only come to the JS stack when my
+//call stack is empty this is how architecture is designed
+
+//With any environment unless the call stack is empty we cannot put any function into it even If
+//1 sec has been completed
+
+//1.JS only gives logic
+//2.Asynchronous function is given by environment
+//3.As soon as it sees call of async function it moves it to Web API area and then code will execute
+//4.This async function only  comes back to call stack when the call stack is empty
+
+//The person who controls the crowd, controls the queue that they just enter sequently only after the
+//call stack is empty is the event loop
+
+//Asynchronous architecture of browser and same goes for node js
+
+//JS is just a engine which provides user logic ,
+ it is a single thread(means only provides the logic doesn't know most of the things)
+
+ //When any asynchronous function comes in the call stack it moves into Web API
+
+ //As soon as wait is over in Web Api for a asynchronous function then call backs are enqueued
+  into call back queue for wait purpose
+
+  //event loop coordinates between call back queue and call stack as soon as call back queue gets empty
+  it pushes elements of call back queue into call stack

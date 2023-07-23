@@ -1,0 +1,20 @@
+If we dont have any variable in current scope we should go to function definition where code is written
+and we will look outside of that
+
+Inorder to use closure the outer variable we want to use should be in the lexical scope
+
+*Closure is just an extension of lexical scope
+
+*When we do hoisting part at that point of time count will be inside closure
+
+*When JS gives memory to a function , that function forms closure with any outer variable
+that are there- closure witn only variable not value
+
+*Closure is ntg but a storage where count variable is stored
+
+*When outer function is invoked count got its memory undefined and inner function got the memory and it was put to the heap
+at that time inner function forms closure with count and ofcourse outer variable should bein lexical scope.
+
+*greeter function will also get the access of closure of getFirstName function too
+
+*Closure is ntg but if we have any variable outside the function it will haveaccess to that variable

@@ -1,0 +1,25 @@
+JS is a multi paradigm language i.e there are multiple ways of doing the thins and all these ways arecombined together and used in end product
+Immutable means there is no scope of change i.e not changing a particular object
+
+* All the 4 ways of creating object in JS weren't originally available in the language
+1st way - Object Literal
+2nd way - Function constructor
+object.create was added to overcome the limitation of first 2 ways
+class constructor was added because of some accomodations
+
+
+*Whenever we use new Person in code , Class Person creates an empty object and this in the person class refers to empty
+object and we fill the object and return the object over to variable keyura , there is no need of any explicit return
+
+*If we dont use new while creating object , it is a normal function call and since we are not using
+any return statement the variable keyura becomes undefined
+
+* class is basically a abstraction layer over normal function constructor
+
+*Function constructor with the help of new is an abstraction of giving an empty object and automatically
+gives the filled object to that variable
+
+*Function gives a object using the new keyword
+
+*We cannot create any private variable when it comes to JS as bydefault there is no inbuilt feature to create
+private variable in JS because we dont have internal objects we create objects from object

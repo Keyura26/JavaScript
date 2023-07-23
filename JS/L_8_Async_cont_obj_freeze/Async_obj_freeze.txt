@@ -1,0 +1,1 @@
+setTimeout , setInterval ,clearInterval are not part of java script they are part of web API

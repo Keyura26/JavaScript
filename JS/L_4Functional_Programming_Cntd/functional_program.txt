@@ -1,0 +1,6 @@
+Before ES6 map reduce filter were not part of js 
+these are part of library name known as load ash
+
+Significance of function as an object is that
+JS is based on Ecma script standard that every browser window follow while they create interpreter for java script
+If we just print function we will be printing what is name of the function , who i parent

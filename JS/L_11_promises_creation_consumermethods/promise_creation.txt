@@ -1,0 +1,4 @@
+Ques:
+1.Can you implement promisify or create own promise APIs
+2.Before promise came to JS as a native feature it was part of different libraries from
+there we picked it and added to JS to overcome the issues with callback

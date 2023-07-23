@@ -1,0 +1,17 @@
+* Async await is ntg but a syntax sugar i.e it makes syntax of using promises a bit more easier
+Internally async await is transpiled into promises
+
+* Any kind of event listener(button.eventlistener=function) or timer function will move to task queue(call
+back queue)
+
+*Task queue consists of call backs of asynchronous function and event handlers , micro task queue consists of
+all the call backs from promises and single event loop is present which handles micro task queue first
+and then goes to call back or task queue
+
+*Call stack                Micro stack Queue           Call back queue        UI queue
+
+
+
+
+UI  queue will wait until micro task queue gets empty
+Rendering can only happen when micro task queue gets empty
