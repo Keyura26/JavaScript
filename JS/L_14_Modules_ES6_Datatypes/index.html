@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+    <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    </head>
+    <body>
+
+        <h1>Understanding Modules</h1>
+        <!-- normally adding 
+        if a fn or variable/fn is declard in the one script
+        then that var/fn  can be accessed
+        --> 
+
+        <!-- <script src="lib.js" ></script> 
+        <script src="client.js" ></script>  -->
+         <!-- here client.js is accessed after lib.js so every variable and function available in lib.js 
+        is accessed in client.js -->
+        <!-- Block scope and function scope are considered accross the files -->
+
+
+          <!--Issues
+        * if a fn or variable/fn is declard in the one script
+          then that var/fn  can be accessed.
+        * abstraction of each   
+          Modules were introduced
+  to make use of abstraction(hide properties of one file and they cannot be accessed into other) use modules
+  for that we use type=module  -->
+  
+        <script src="lib.js" type="module" ></script> 
+        <script src="client.js" type="module"></script> 
+  
+    </body>
+</html>
