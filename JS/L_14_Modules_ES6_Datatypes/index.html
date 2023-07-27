@@ -29,8 +29,11 @@
   to make use of abstraction(hide properties of one file and they cannot be accessed into other) use modules
   for that we use type=module  -->
   
-        <script src="lib.js" type="module" ></script> 
-        <script src="client.js" type="module"></script> 
-  
+  <!-- once html is rendered it would be requested parallely by downloading modules and they will be executed serially
+  after html rendering is done -->
+        <script src="./lib_module.js" type="module" ></script> 
+        <script src="./lib1_module.js" type="module" ></script> 
+        <script src="./client_module.js" type="module"></script> 
+        <script src="./client2_module.js" type="module"></script> 
     </body>
 </html>
