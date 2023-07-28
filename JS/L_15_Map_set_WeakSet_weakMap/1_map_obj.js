@@ -83,17 +83,63 @@ for (let key in cap) {     //this works for an object
  * ***/
 
 //  user -> mmultiple entries
-const user1 = { id: 1, name: 'Alice' };
-const user2 = { id: 2, name: 'Bob' };
-const user3 = { id: 3, name: 'Charlie' };
+// const user1 = { id: 1, name: 'Alice' };
+// const user2 = { id: 2, name: 'Bob' };
+// const user3 = { id: 3, name: 'Charlie' };
 
-// // //  extended data 
-let preferenecsObj1 = { theme: 'dark', language: 'en' }
-let preferenecsObj2 = { theme: 'light', language: 'fr' }
-let preferenecsObj3 = { theme: 'dark', language: 'de' }
+// // // //  extended data 
+// let preferenecsObj1 = { theme: 'dark', language: 'en' }
+// let preferenecsObj2 = { theme: 'light', language: 'fr' }
+// let preferenecsObj3 = { theme: 'dark', language: 'de' }
 
-let preferenceMap = new Map();
+// let preferenceMap = new Map();
 
-preferenceMap.set(user1, preferenecsObj1);
-preferenceMap.set(user2, preferenecsObj2);
-preferenceMap.set(user3, preferenecsObj3);
+// preferenceMap.set(user1, preferenecsObj1);
+// preferenceMap.set(user2, preferenecsObj2);
+// preferenceMap.set(user3, preferenecsObj3);
+
+
+// console.log("first Users name", user1.name);
+// console.log("first users preference", preferenceMap.get(user1));
+
+//******************************/
+
+/******************object format of implementaion************************/
+
+const user1 = {
+    id: 1, name: 'Alice',
+    pereferences: { theme: 'dark', language: 'en' }
+};
+const user2 = {
+    id: 2, name: 'Bob',
+    pereferences: { theme: 'light', language: 'fr' }
+};
+const user3 = {
+    id: 3, name: 'Charlie',
+    pereferences: { theme: 'dark', language: 'de' }
+};
+
+ //extended data 
+// let preferenecsObj1 = { theme: 'dark', language: 'en' }
+// let preferenecsObj2 = { theme: 'light', language: 'fr' }
+// let preferenecsObj3 = { theme: 'dark', language: 'de' }
+
+console.log("first Users name", user1.name);
+console.log("first users preference", user1.pereferences); //with object form of implementation we need to perform 
+// a lot of nesting
+
+/********************************/
+
+
+//  2. when you have lot update / delete -> amount of data set -> Map
+
+console.log(cap);
+console.log(personMap);
+
+
+print("``````````````````");
+let strMap = JSON.stringify(personMap);
+console.log("strMap:" , strMap);  // Map can never be stringified
+print("``````````````````");
+ let strObj = JSON.stringify(cap);  //to apply JSON.string we need to use object
+console.log("strObj:" , strObj);
